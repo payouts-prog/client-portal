@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Wright Groups Client Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f4f7;
+            margin: 0;
+            text-align: center;
+        }
+
+        .header {
+            background-color: #1F3A5F;
+            color: white;
+            padding: 25px;
+        }
+
+        .box {
+            background: white;
+            width: 400px;
+            margin: 80px auto;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 6px;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin-top: 15px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #1F3A5F;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #portal {
+            display: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h2>WRIGHT GROUPS OF COMPANY LLC</h2>
+    <p>Secure Client Portal</p>
+</div>
+
+<div class="box" id="login">
+    <h3>Enter Access Password</h3>
+    <input type="password" id="password" placeholder="Password">
+    <br>
+    <button onclick="login()">Access</button>
+    <p id="error" style="color:red;"></p>
+</div>
+
+<div class="box" id="portal">
+    <h3>Client Dashboard</h3>
+    <p>Invoice Reference: WG-2026-000217</p>
+    <a href="Wright_Groups_of_Company_LLC_Premium_Legal_Invoice_INV-2026-0217.pdf" target="_blank">
+        <button>Download Invoice</button>
+    </a>
+</div>
+
+<script>
+function login() {
+    var pass = document.getElementById("password").value;
+
+    if(pass === "WGsecure2026") {
+        document.getElementById("login").style.display = "none";
+        document.getElementById("portal").style.display = "block";
+    } else {
+        document.getElementById("error").innerText = "Incorrect password.";
+    }
+}
+</script>
+
+</body>
+</html>
